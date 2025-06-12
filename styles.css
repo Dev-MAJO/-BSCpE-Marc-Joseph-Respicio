@@ -203,6 +203,18 @@ body {
     transform: translateY(-2px);
 }
 
+.btn-tertiary {
+    background-color: transparent;
+    color: var(--light-brown);
+    border-color: var(--light-brown);
+}
+
+.btn-tertiary:hover {
+    background-color: var(--light-brown);
+    color: var(--dark-brown);
+    transform: translateY(-2px);
+}
+
 /* Section Styles */
 section {
     padding: 80px 0;
