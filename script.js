@@ -286,3 +286,78 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Image Gallery Functions
+const galleryImages = [
+    'images/figma-dashboard.jpg',
+    'images/figma-homepage.jpg',
+    'images/figma-registration.jpg',
+    'images/figma-confirmation.jpg'
+];
+
+let currentImageIndex = 0;
+
+function openImageGallery() {
+    document.getElementById('imageGalleryModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeImageGallery() {
+    document.getElementById('imageGalleryModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function openImageModal(imageSrc) {
+    const fullImageModal = document.getElementById('fullImageModal');
+    const fullImage = document.getElementById('fullImage');
+
+    currentImageIndex = galleryImages.indexOf(imageSrc);
+    fullImage.src = imageSrc;
+    fullImageModal.style.display = 'block';
+}
+
+function closeFullImage() {
+    document.getElementById('fullImageModal').style.display = 'none';
+}
+
+function previousImage() {
+    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    document.getElementById('fullImage').src = galleryImages[currentImageIndex];
+}
+
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+    document.getElementById('fullImage').src = galleryImages[currentImageIndex];
+}
+
+// Close modals when clicking outside
+window.onclick = function(event) {
+    const galleryModal = document.getElementById('imageGalleryModal');
+    const fullImageModal = document.getElementById('fullImageModal');
+
+    if (event.target === galleryModal) {
+        closeImageGallery();
+    }
+    if (event.target === fullImageModal) {
+        closeFullImage();
+    }
+}
+
+// Keyboard navigation for full image modal
+document.addEventListener('keydown', function(event) {
+    const fullImageModal = document.getElementById('fullImageModal');
+    if (fullImageModal.style.display === 'block') {
+        if (event.key === 'ArrowLeft') {
+            previousImage();
+        } else if (event.key === 'ArrowRight') {
+            nextImage();
+        } else if (event.key === 'Escape') {
+            closeFullImage();
+        }
+    }
+
+    const galleryModal = document.getElementById('imageGalleryModal');
+    if (galleryModal.style.display === 'block' && event.key === 'Escape') {
+        closeImageGallery();
+    }
+});

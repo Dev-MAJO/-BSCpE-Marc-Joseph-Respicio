@@ -244,6 +244,9 @@
                         <span class="tech-tag">Prototyping</span>
                     </div>
                     <div class="project-links">
+                        <button onclick="openImageGallery()" class="project-link gallery-btn">
+                            <span>🖼️</span> View Gallery
+                        </button>
                         <a href="https://www.figma.com/proto/uHFdIHOyUMx9UdMMBQQz0B/MJ-s-Co-Working-v1?node-id=1-2&p=f&t=Sbg7V3IlhjUPZHv2-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2"
                            target="_blank" class="project-link">
                             <span>🎯</span> View Prototype
@@ -452,6 +455,67 @@
             </div>
         </div>
     </section>
+
+    <!-- Image Gallery Modal -->
+    <div id="imageGalleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>MJ's Co-Working Space - Design Gallery</h3>
+                <span class="close" onclick="closeImageGallery()">&times;</span>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-grid">
+                    <!-- Complete Dashboard Overview -->
+                    <div class="gallery-item" onclick="openImageModal('images/figma-dashboard.jpg')">
+                        <img src="images/figma-dashboard.jpg" alt="Co-Working Complete Dashboard" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Complete Dashboard</h4>
+                            <p>Full user flow overview with all screens</p>
+                        </div>
+                    </div>
+
+                    <!-- Homepage -->
+                    <div class="gallery-item" onclick="openImageModal('images/figma-homepage.jpg')">
+                        <img src="images/figma-homepage.jpg" alt="Homepage Design" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Homepage</h4>
+                            <p>Coffee-themed landing page with menu options</p>
+                        </div>
+                    </div>
+
+                    <!-- Registration -->
+                    <div class="gallery-item" onclick="openImageModal('images/figma-registration.jpg')">
+                        <img src="images/figma-registration.jpg" alt="Registration Form" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Registration</h4>
+                            <p>"Let Me know!" email signup form</p>
+                        </div>
+                    </div>
+
+                    <!-- Confirmation -->
+                    <div class="gallery-item" onclick="openImageModal('images/figma-confirmation.jpg')">
+                        <img src="images/figma-confirmation.jpg" alt="Confirmation Page" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h4>Confirmation</h4>
+                            <p>Thank you page with success message</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Size Image Modal -->
+    <div id="fullImageModal" class="modal">
+        <div class="full-image-content">
+            <span class="close" onclick="closeFullImage()">&times;</span>
+            <img id="fullImage" src="" alt="Full Size Design">
+            <div class="image-nav">
+                <button onclick="previousImage()" class="nav-btn">❮</button>
+                <button onclick="nextImage()" class="nav-btn">❯</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
