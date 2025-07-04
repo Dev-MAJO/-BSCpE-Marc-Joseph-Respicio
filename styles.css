@@ -588,6 +588,39 @@ section {
     font-weight: 500;
 }
 
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--primary-brown);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-brown);
+}
+
+.project-link:hover {
+    background: transparent;
+    color: var(--primary-brown);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+}
+
+.project-link span {
+    font-size: 1rem;
+}
+
 /* Video Portfolio Section */
 .video-portfolio {
     background-color: var(--light-gray);
